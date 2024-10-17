@@ -1,0 +1,600 @@
+/* Import Poppins Font & Cairo Font */
+/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    font-family: "Poppins", "Cairo", sans-serif;
+    
+    /* ========== Hide The Tap Highlight Colour in Mobile Device ========== */
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    /* ====== Colours ====== */
+    --main-color: #5e63ff;
+    --main-secondary-color: #3f45e4;
+    --bg-color: #11121a;
+    --border-color: #42434a;
+    --hover-color: #222533;
+    --hover-secondary-color: #33384d;
+    --text-color: #f0f0f0;
+    --secondary-text-color: #b0b3c1;
+    --placeholder-color: #3d3d3d;
+    --shadow-color: #1e212d;
+    --black-color: #000;
+    --white-color: #fff;
+    --scroll-bar-thumb-color: #323441;
+    --table-bg: #1e212d;
+    --table-hover: #161921;
+    --second-table-hover: #14161f;
+
+    /* ====== Styling ====== */
+        /* Global */
+            --container-width-in-large-screen: 1170px;
+            --container-width-in-medium-screen: 970px;
+            --container-width-in-small-screen: 750px;
+
+        /* index Page */
+            --form-width-in-large-screen: 350px;
+            --form-width-in-medium-screen: 325px;
+            --form-width-in-small-screen: 275px;
+            --form-width-in-extra-small-screen: 225px;
+            --form-height: auto;
+            --form-bg: rgba(255, 255, 255, 0.1);
+            --form-padding: 20px;
+            --form-border: 2px solid var(--main-color);
+            --form-border-radius: 10px;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-thumb-color);
+    border-radius: 100vmax;
+    -webkit-border-radius: 100vmax;
+    -moz-border-radius: 100vmax;
+    -ms-border-radius: 100vmax;
+    -o-border-radius: 100vmax;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+}
+
+::selection {
+    color: var(--white-color);
+    background-color: var(--main-color);
+}
+
+/* ====== Container Styling Start ====== */
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0px auto;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* Small Screens */
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: var(--container-width-in-small-screen);
+    }
+}
+
+/* Medium Screens */
+
+@media screen and (min-width: 992px) {
+    .container {
+        width: var(--container-width-in-medium-screen);
+    }
+}
+
+/* Large Screens */
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: var(--container-width-in-large-screen);
+    }
+}
+
+/* ====== Container Styling End ====== */
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.main-color {
+    color: var(--main-color);
+}
+
+.title {
+    font-size: 1.75rem;
+    text-align: center;
+    margin: 20px;
+    white-space: nowrap;
+}
+
+.gap-lg {
+    gap: 2rem;
+}
+
+.gap-md {
+    gap: 15px;
+}
+
+.gap-sm {
+    gap: 5px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.blur {
+    position: absolute;
+    box-shadow: 0 0 1500px 130px var(--main-color);
+    z-index: -1;
+}
+
+.top-left {
+    top: 50px;
+    left: 80px;
+}
+
+.bottom-right {
+    bottom: 50px;
+    right: 50px;
+}
+
+/* ====== Index Page Styling Start ====== */
+
+.index-form,
+.add-user-form {
+    width: var(--form-width-in-large-screen);
+    height: var(--form-height);
+    background-color: var(--form-bg);
+    padding: var(--form-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: var(--form-border);
+    border-radius: var(--form-border-radius);
+    -webkit-border-radius: var(--form-border-radius);
+    -moz-border-radius: var(--form-border-radius);
+    -ms-border-radius: var(--form-border-radius);
+    -o-border-radius: var(--form-border-radius);
+    scale: 1.2;
+}
+
+form label {
+    color: var(--white-color);
+    margin-bottom: 5px;
+}
+
+form input:not([type="checkbox"]),
+textarea {
+    color: var(--main-secondary-color);
+    font-weight: 500;
+    padding: 5px 10px;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    box-shadow: 0 0 10px var(--shadow-color);
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+
+form input:not([type="checkbox"]):focus,
+textarea:focus {
+    box-shadow: 3px 3px 0 0 var(--bg-color);
+}
+
+form input::placeholder,
+textarea::placeholder {
+    color: var(--placeholder-color);
+}
+
+.submit-btn {
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 2.5px 0;
+    margin-top: 10px;
+    letter-spacing: .5px;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.submit-btn:hover {
+    background: transparent;
+}
+
+.auther-link {
+    background: var(--main-color);
+    color: var(--text-color);
+    padding: 4px 20px;
+    width: max-content;
+    border-radius: 100vmax;
+    margin: 0 auto;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    -webkit-border-radius: 100vmax;
+    -moz-border-radius: 100vmax;
+    -ms-border-radius: 100vmax;
+    -o-border-radius: 100vmax;
+}
+
+.auther-link:hover {
+    background-color: var(--main-secondary-color);
+}
+
+button[disabled] {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+button[disabled]:hover {
+    background: var(--main-color);
+}
+
+form hr {
+    width: 100%;
+    margin: 10px auto;
+    border: 1px solid var(--border-color);
+    border-radius: 100vmax;
+    -webkit-border-radius: 100vmax;
+    -moz-border-radius: 100vmax;
+    -ms-border-radius: 100vmax;
+    -o-border-radius: 100vmax;
+}
+
+/* ====== Index Page Styling End ====== */
+
+/* ====== Dashboard Page Styling Start ====== */
+
+.content {
+    width: 100%;
+}
+
+.title-info {
+    background-color: #0370dd;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.data-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.data-info .box {
+    background-color: var(--bg-color);
+    border: 2px solid var(--border-color);
+    height: 150px;
+    flex-basis: 150px;
+    flex-grow: 1;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.data-info .box:hover {
+    background-color: var(--hover-color);
+}
+
+.data-info .box svg {
+    width: 80px;
+    fill: var(--white-color);
+}
+
+.data-info .box .data {
+    text-align: center;
+}
+
+.data-info .box .data span {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+/* Chart Styling Start */
+
+.diagram {
+    width: 99%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    margin: 10px auto 0 auto;
+}
+
+.diagram .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 30px 0 30px;
+
+    svg {
+        fill: var(--white-color);
+        width: 25px;
+    }
+}
+
+#usersChart {
+    height: 225px;
+    padding: 0 10px 10px 10px;
+}
+
+/* Chart Styling End */
+
+/* ====== Dashboard Page Styling End ====== */
+
+/* ====== Chat Page Styling Start ====== */
+
+.chat-container {
+    max-width: 850px;
+    margin: auto;
+    padding: 20px;
+}
+
+.chat-form {
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: 125px;
+    margin-top: 7px;
+}
+
+.chat-form .submit-btn {
+    padding: 5px 25px;
+    margin: 0;
+}
+
+.panel .panel-heading {
+    padding: 5px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, var(--main-color), var(--main-secondary-color));
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    
+    svg {
+        fill: var(--white-color);
+    }
+}
+
+.panel .panel-body .list-group-item {
+    max-height: 20vh;
+    overflow-y: auto;
+    padding: 5px 25px;
+    margin: 10px 0;
+    background-color: var(--hover-color);
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+
+.panel .panel-body .list-group-item:hover {
+    background-color: var(--hover-secondary-color);
+}
+
+/* ====== Chat Page Styling End ====== */
+
+/* ====== Table Styling Start ====== */
+
+.table-container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+}
+
+thead {
+    background-color: var(--table-bg);
+    color: var(--text-color);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--table-bg);
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+
+tbody tr:nth-child(even):hover {
+    background-color: var(--second-table-hover);
+}
+
+tbody tr:hover:not(:nth-child(even)) > td {
+    background-color: var(--table-hover);
+}
+
+th {
+    text-transform: uppercase;
+}
+
+/* ====== Table Styling End ====== */
+
+
+/* ====== Responsive ====== */
+
+@media screen and (max-width: 992px) {
+    .index-form,
+    .add-user-form {
+        width: var(--form-width-in-medium-screen);
+    }
+
+    .blur {
+        box-shadow: 0 0 1500px 100px var(--main-color);
+    }
+    
+    .data-info .box {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .table-container {
+        width: 100%;
+        padding: 0 25px;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .data-info .box {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .data-info .box {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        padding: 10px 0;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .index-form,
+    .add-user-form {
+        width: var(--form-width-in-small-screen);
+    }
+
+    .blur {
+        box-shadow: 0 0 1000px 85px var(--main-color);
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .index-form,
+    .add-user-form {
+        width: var(--form-width-in-extra-small-screen);
+    }
+
+    form label {
+        font-size: 0.9rem;
+    }
+
+    form input:not([type="checkbox"]) {
+        font-size: 0.9rem;
+    }
+}
